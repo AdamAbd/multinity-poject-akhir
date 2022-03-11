@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+import "../Blog.css";
 
 function Blog() {
   const [blogs, setBlog] = useState([]);
@@ -19,15 +22,28 @@ function Blog() {
   }, []);
 
   return (
-    <section>
-      <h1>Blog</h1>
-      <p>Tulisan-tulisan ku tapi boong</p>
+    <section className="section">
+      <h1 className="section-title">Blog</h1>
+      <p className="section-description">
+        Berikut adalah tulisanku (tapi bo'ong)
+      </p>
       {loading ? (
-        <i>Loading Blog ...</i>
+        <i className="loading">Loading Blog ...</i>
       ) : (
-        <div>
+        <div className="blogs">
           {blogs.map(function (blog) {
-            return <article key={blog.id}>{blog.title}</article>;
+            return (
+              <article className="blog" key={blog.id}>
+                <h2 className="blog-title">
+                  <Link to={`/blog/${blog.id}`}>{blog.title}</Link>
+                </h2>
+                <p className="blog-description">
+                  {blog.newsSite}
+                  {". "}
+                  <time>{new Date(blog.publishedAt).toLocaleDateString()}</time>
+                </p>
+              </article>
+            );
           })}
         </div>
       )}

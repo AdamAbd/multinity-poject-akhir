@@ -2,9 +2,9 @@ import React from "react";
 
 function Profile() {
   return (
-    <div>
-      <h1>Profile Page</h1>
-      <p>
+    <section className="section">
+      <h1 className="section-title">Profile Page</h1>
+      <p className="section-description">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nisi,
         cupiditate alias explicabo fugiat est non ut doloremque dolores aliquid,
         aut animi dolorum? Odit esse necessitatibus fugit eius voluptates
@@ -15,7 +15,7 @@ function Profile() {
         nesciunt doloribus nostrum libero ut nemo minus quo repellendus
         doloremque tempora! Delectus, in impedit.
       </p>
-    </div>
+    </section>
   );
 }
 

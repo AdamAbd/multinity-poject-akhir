@@ -1,41 +1,59 @@
-.App {
-  text-align: center;
+/* Mencegah overlaping */
+
+* {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app {
+    width: 415px;
+    margin: 0 auto;
+    background-color: white;
+    border: 5px solid #eeee;
+    min-height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+@media (max-width: 415px) {
+    .app {
+        width: 100%;
+    }
 }
 
-.App-header {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.brand {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    padding: 12px;
 }
 
-.App-link {
-  color: #61dafb;
+.nav {
+    border-top: 1px solid #eeee;
+    border-bottom: 1px solid #eeee;
+    display: flex;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.nav-item {
+    display: inline-block;
+    /* width: calc(100% / 4); */
+    flex: 1 1 0%;
+    text-align: center;
+    padding: 14px;
+    color: #000;
+    text-decoration: none;
+    font-size: 14px;
 }
 
-button {
-  font-size: calc(10px + 2vmin);
+.nav-item:not(:last-child) {
+    border-right: 1px solid #eee;
+}
+
+.section {
+    padding: 30px;
+}
+
+.section-title {
+    margin-top: 0;
+}
+
+.section-description {
+    line-height: 25px;
 }
