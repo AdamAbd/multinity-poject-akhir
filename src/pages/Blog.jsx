@@ -8,6 +8,8 @@ function Blog() {
   const [loading, setLoading] = useState(true);
 
   useEffect(function () {
+    document.title = "Blog > Adam Website";
+
     async function getBlog() {
       const response = await fetch(
         "https://api.spaceflightnewsapi.net/v3/blogs"

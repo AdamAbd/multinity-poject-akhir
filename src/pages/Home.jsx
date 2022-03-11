@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 function Home() {
+  useEffect(function () {
+    document.title = "Adam Website";
+  });
+
   return (
     <section className="section">
       <h1 className="section-title">Home Page</h1>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+// import { Helmet } from "react-helmet";
 import { useParams } from "react-router-dom";
 
 import "../Blog.css";
@@ -13,20 +14,25 @@ function BlogDetail() {
   useEffect(
     function () {
       async function getBlog() {
+        document.title = "Loading...";
+
         const response = await fetch(
           `https://api.spaceflightnewsapi.net/v3/blogs/${params.id}`
         );
 
         if (!response.ok) {
+          document.title = "Blog Not Found";
           return setNotFound(true);
         }
 
         const data = await response.json();
+        document.title = `${data.title} > Blog > Adam Website`;
 
         setBlog(data);
         setLoading(false);
         // console.log(data);
       }
+
       getBlog();
     },
     [params]
@@ -43,6 +49,11 @@ function BlogDetail() {
 
   return (
     <section className="section">
+      {/* <Helmet>
+        <title>
+          {blog.title ? blog.title : ""} {">"} Blog {">"} Adam Website
+        </title>
+      </Helmet> */}
       {loading ? (
         <i>Loading Blog ...</i>
       ) : (
